@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Tik Tak Top Course Script Loaded');
     
     // ==================== GOOGLE SHEETS CONFIG ====================
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxQWiNQqjwir06dK5d26yZoRRS3hJ4KnpgMSZrdU7LOiNx-eyD_7RX-AajutaWW1k4x/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxKwYOCjTYLCd341fqykFzF5eTVWwm6kd2KzEa0AczKAdzZN5-68qRpteSGiI0MLvTW/exec";
     
     // ==================== MOBILE MENU TOGGLE ====================
     const hamburger = document.getElementById('hamburger');
