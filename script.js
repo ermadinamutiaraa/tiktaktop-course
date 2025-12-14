@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Tik Tak Top Course Script Loaded');
     
     // ==================== GOOGLE SHEETS CONFIG ====================
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxKwYOCjTYLCd341fqykFzF5eTVWwm6kd2KzEa0AczKAdzZN5-68qRpteSGiI0MLvTW/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwM77ruQ0maSviqCaffOiWqSje7105u67JOuDotYMQHu7rKHm5GviVafUErTFHfxMaA/exec";
     
     // ==================== MOBILE MENU TOGGLE ====================
     const hamburger = document.getElementById('hamburger');
@@ -280,13 +280,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 try {
                     // Send to Google Sheets via Apps Script
-                    const response = await fetch(GOOGLE_SCRIPT_URL, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(submissionData)
-                    });
+                    const sheetData = new FormData();
+sheetData.append("nama", submissionData.nama);
+sheetData.append("program", submissionData.program);
+sheetData.append("nik", submissionData.nik);
+sheetData.append("alamat", submissionData.alamat);
+sheetData.append("whatsapp", submissionData.whatsapp);
+
+const response = await fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    body: sheetData
+});
+
                     
                     console.log('📥 Response status:', response.status);
                     
