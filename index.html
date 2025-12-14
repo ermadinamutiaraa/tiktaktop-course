@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik Tak Top Course - Belajar Komputer Terbaik</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Tik Tak Top Course</span>
+                    <span class="logo-subtitle">Belajar Komputer Terbaik</span>
+                </div>
+            </a>
+            
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#kelas" class="nav-link"><i class="fas fa-graduation-cap"></i> Kelas</a></li>
+                <li class="dropdown">
+                    <a href="#layanan" class="nav-link"><i class="fas fa-cogs"></i> Layanan <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#register"><i class="fas fa-user-plus"></i> Pendaftaran Anggota</a>
+                        <a href="#layanan"><i class="fas fa-info-circle"></i> Informasi Layanan</a>
+                    </div>
+                </li>
+                <li><a href="#stats" class="nav-link"><i class="fas fa-chart-line"></i> Statistik</a></li>
+                <li><a href="#register" class="nav-link register-btn"><i class="fas fa-user-plus"></i> Daftar Sekarang</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="jumbotron" id="home">
+        <div class="jumbotron-content">
+            <h1 class="jumbotron-title">Selamat Datang di <span class="highlight">Tik Tak Top Course</span></h1>
+            <p class="jumbotron-subtitle">Tempat belajar komputer terbaik dengan metode pembelajaran modern dan instruktur berpengalaman.</p>
+            <div class="jumbotron-actions">
+                <a href="#register" class="cta-button">
+                    <span>Daftar Sekarang</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#kelas" class="cta-button secondary">
+                    <span>Lihat Kelas</span>
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="jumbotron-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Course Selection Notification -->
+    <div class="course-notification" id="courseNotification" style="display: none;" aria-hidden="true">
+        <div class="notification-content">
+            <div class="notification-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Pilih Kelas Favorit Anda!</h3>
+                <button class="close-notification" id="closeNotification" aria-label="Tutup notifikasi">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="notification-body">
+                <p>Temukan kelas yang tepat untuk karir Anda. Mulai dari pemula hingga mahir.</p>
+                <div class="course-tags">
+                    <span class="course-tag" data-course="web">Kelas Web</span>
+                    <span class="course-tag" data-course="python">Kelas Python</span>
+                    <span class="course-tag" data-course="excel">Kelas Excel</span>
+                    <span class="course-tag" data-course="desain">Kelas Desain</span>
+                </div>
+            </div>
+            <div class="notification-footer">
+                <a href="#kelas" class="btn-notification">Lihat Semua Kelas</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="section section-light" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <p class="section-subtitle">Kami adalah lembaga kursus komputer terpercaya dengan pengalaman lebih dari 10 tahun dalam melahirkan profesional IT berkualitas.</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Dengan metode pembelajaran yang modern dan kurikulum yang selalu diperbarui, kami membantu siswa untuk menguasai keterampilan komputer yang dibutuhkan di dunia kerja saat ini.</p>
+                    <p>Instruktur kami adalah praktisi yang berpengalaman di bidangnya masing-masing, siap membimbing Anda dari dasar hingga mahir.</p>
+                    
+                    <div class="stats" id="statsContainer">
+                        <div class="stat-item">
+                            <h3 data-count="5000">0</h3>
+                            <p>Siswa Lulus</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 data-count="50">0</h3>
+                            <p>Instruktur</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 data-count="100">0</h3>
+                            <p>Kelas Tersedia</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 data-count="10">0</h3>
+                            <p>Tahun Pengalaman</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kelas Section -->
+    <section class="section" id="kelas">
+        <div class="container">
+            <h2 class="section-title">Kelas Unggulan</h2>
+            <p class="section-subtitle">Pilih dari berbagai kelas komputer yang dirancang untuk karir masa depan Anda.</p>
+            
+            <div class="courses-grid">
+                <!-- Kelas 1 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Kelas Dasar Web Development</h3>
+                        <span class="course-badge new">Terbaru</span>
+                    </div>
+                    <div class="course-content">
+                        <p>Belajar membuat website dari nol dengan HTML, CSS, dan JavaScript dasar. Cocok untuk pemula.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> HTML & CSS Dasar</li>
+                            <li><i class="fas fa-check"></i> JavaScript Pemula</li>
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> Hosting Gratis</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">Rp 1.500.000</div>
+                        <button class="course-btn" data-course="web" data-course-name="Kelas Dasar Web Development" data-price="Rp 1.500.000">Pilih Kelas</button>
+                    </div>
+                </div>
+                
+                <!-- Kelas 2 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Kelas Python Pemula</h3>
+                        <span class="course-badge populer">Populer</span>
+                    </div>
+                    <div class="course-content">
+                        <p>Pelajari Python dari dasar untuk pemrograman, data analysis, dan automation.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Python Dasar</li>
+                            <li><i class="fas fa-check"></i> OOP dengan Python</li>
+                            <li><i class="fas fa-check"></i> Pandas untuk Data</li>
+                            <li><i class="fas fa-check"></i> Project Akhir</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">Rp 2.000.000</div>
+                        <button class="course-btn" data-course="python" data-course-name="Kelas Python Pemula" data-price="Rp 2.000.000">Pilih Kelas</button>
+                    </div>
+                </div>
+                
+                <!-- Kelas 3 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Kelas Excel untuk Data Analysis</h3>
+                        <span class="course-badge premium">Premium</span>
+                    </div>
+                    <div class="course-content">
+                        <p>Master Excel untuk analisis data, dashboard, dan otomatisasi pekerjaan kantor.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Formula Lanjutan</li>
+                            <li><i class="fas fa-check"></i> Pivot Table & Chart</li>
+                            <li><i class="fas fa-check"></i> Power Query</li>
+                            <li><i class="fas fa-check"></i> Dashboard Excel</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">Rp 1.800.000</div>
+                        <button class="course-btn" data-course="excel" data-course-name="Kelas Excel untuk Data Analysis" data-price="Rp 1.800.000">Pilih Kelas</button>
+                    </div>
+                </div>
+
+                <!-- Kelas 4 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Kelas Desain Grafis</h3>
+                        <span class="course-badge new">Terbaru</span>
+                    </div>
+                    <div class="course-content">
+                        <p>Pelajari Adobe Photoshop dan Illustrator untuk membuat desain profesional.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Photoshop Dasar</li>
+                            <li><i class="fas fa-check"></i> Illustrator untuk Logo</li>
+                            <li><i class="fas fa-check"></i> Layout & Typography</li>
+                            <li><i class="fas fa-check"></i> Portofolio Desain</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">Rp 2.200.000</div>
+                        <button class="course-btn" data-course="desain" data-course-name="Kelas Desain Grafis" data-price="Rp 2.200.000">Pilih Kelas</button>
+                    </div>
+                </div>
+
+                <!-- Kelas 5 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Kelas JavaScript Modern</h3>
+                        <span class="course-badge populer">Populer</span>
+                    </div>
+                    <div class="course-content">
+                        <p>Pelajari JavaScript ES6+ untuk pengembangan web modern dan aplikasi interaktif.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> JavaScript ES6+</li>
+                            <li><i class="fas fa-check"></i> DOM Manipulation</li>
+                            <li><i class="fas fa-check"></i> Async Programming</li>
+                            <li><i class="fas fa-check"></i> Modern Framework</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">Rp 2.500.000</div>
+                        <button class="course-btn" data-course="javascript" data-course-name="Kelas JavaScript Modern" data-price="Rp 2.500.000">Pilih Kelas</button>
+                    </div>
+                </div>
+
+                <!-- Kelas 6 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Kelas Database SQL</h3>
+                        <span class="course-badge new">Terbaru</span>
+                    </div>
+                    <div class="course-content">
+                        <p>Pelajari SQL untuk mengelola database dan analisis data secara efektif.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> SQL Dasar & Lanjutan</li>
+                            <li><i class="fas fa-check"></i> Database Design</li>
+                            <li><i class="fas fa-check"></i> Query Optimization</li>
+                            <li><i class="fas fa-check"></i> MySQL & PostgreSQL</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">Rp 1.900.000</div>
+                        <button class="course-btn" data-course="sql" data-course-name="Kelas Database SQL" data-price="Rp 1.900.000">Pilih Kelas</button>
+                    </div>
+                </div>
+            </div>
+
+
+    <!-- Pendaftaran Anggota Section -->
+    <section class="section section-light" id="register">
+        <div class="container">
+            <h2 class="section-title">Pendaftaran Anggota</h2>
+            <p class="section-subtitle">Bergabunglah sebagai anggota Tik Tak Top Course untuk mendapatkan akses penuh ke semua fasilitas pembelajaran.</p>
+            
+            <div class="form-container">
+                <div class="form-section">
+                    <div class="response-message" id="responseMessage"></div>
+                    
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="anggotaNama">Nama Lengkap <span class="required">*</span></label>
+                            <input type="text" id="anggotaNama" name="anggotaNama" required 
+                                   placeholder="Masukkan nama lengkap Anda sesuai KTP">
+                            <div class="form-hint">Contoh: Ahmad Fauzi</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="anggotaProgram">Program Kelas <span class="required">*</span></label>
+                            <select id="anggotaProgram" name="anggotaProgram" required>
+                                <option value="">-- Pilih Program Kelas --</option>
+                                <option value="web-dasar">Kelas Dasar Web Development</option>
+                                <option value="python">Kelas Python Pemula</option>
+                                <option value="excel">Kelas Excel untuk Data Analysis</option>
+                                <option value="desain">Kelas Desain Grafis</option>
+                                <option value="javascript">Kelas JavaScript Modern</option>
+                                <option value="sql">Kelas Database SQL</option>
+                                <option value="office">Kelas Microsoft Office</option>
+                                <option value="jaringan">Kelas Jaringan Komputer</option>
+                            </select>
+                            <div class="form-hint">Pilih kelas yang ingin Anda ikuti</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="anggotaNIK">NIK / Nomor Induk Siswa <span class="required">*</span></label>
+                            <input type="text" id="anggotaNIK" name="anggotaNIK" required 
+                                   placeholder="Masukkan NIK (16 digit) atau nomor induk siswa">
+                            <div class="form-hint">16 digit untuk NIK, atau nomor induk dari sekolah</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="anggotaAlamat">Alamat Lengkap <span class="required">*</span></label>
+                            <textarea id="anggotaAlamat" name="anggotaAlamat" rows="4" required 
+                                      placeholder="Masukkan alamat lengkap tempat tinggal"></textarea>
+                            <div class="form-hint">Sertakan nama jalan, RT/RW, kelurahan, kecamatan, kota, kode pos</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="anggotaWhatsApp">Nomor WhatsApp <span class="required">*</span></label>
+                            <input type="tel" id="anggotaWhatsApp" name="anggotaWhatsApp" required 
+                                   placeholder="Contoh: 081234567890">
+                            <div class="form-hint">Nomor akan digunakan untuk konfirmasi pendaftaran</div>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="anggotaTerms" name="anggotaTerms" required>
+                            <label for="anggotaTerms">
+                                Saya menyetujui <a href="#" class="terms-link">syarat dan ketentuan</a> serta 
+                                <a href="#" class="terms-link">kebijakan privasi</a> yang berlaku
+                            </label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-user-plus"></i> Daftar sebagai Anggota
+                            </button>
+                            <button type="reset" class="reset-btn">
+                                <i class="fas fa-redo"></i> Reset Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="form-info">
+                    <h3><i class="fas fa-info-circle"></i> Keuntungan Menjadi Anggota</h3>
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Akses Lab Komputer</strong>
+                                <p>24/7 dengan spesifikasi tinggi</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Modul Digital Eksklusif</strong>
+                                <p>Materi lengkap semua program</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Konsultasi Gratis</strong>
+                                <p>Dengan instruktur berpengalaman</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Diskon Kelas 20%</strong>
+                                <p>Untuk semua kelas lanjutan</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Sertifikat Keanggotaan</strong>
+                                <p>Diakui oleh industri IT</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Akses Komunitas</strong>
+                                <p>Networking dengan alumni</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="contact-info">
+                        <h4><i class="fas fa-headset"></i> Butuh Bantuan Pendaftaran?</h4>
+                        <p>Hubungi tim admin kami:</p>
+                        <div class="contact-details">
+                            <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                            <p><i class="fas fa-envelope"></i> anggota@tiktaktopcourse.com</p>
+                            <p><i class="fab fa-whatsapp"></i> +62 812-3456-7890</p>
+                        </div>
+                        <p class="contact-hours">
+                            <i class="fas fa-clock"></i> 
+                            Senin - Jumat: 08:00 - 17:00<br>
+                            Sabtu: 09:00 - 15:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section class="section" id="layanan">
+        <div class="container">
+            <h2 class="section-title">Informasi Layanan</h2>
+            <p class="section-subtitle">Berbagai layanan yang kami sediakan untuk mendukung pembelajaran Anda.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Modul Pembelajaran</h3>
+                    <p>Modul lengkap dan terstruktur untuk semua program kelas, selalu diperbarui sesuai perkembangan teknologi.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Materi digital dan cetak</li>
+                        <li><i class="fas fa-check"></i> Video tutorial</li>
+                        <li><i class="fas fa-check"></i> Latihan soal</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3>Lab Komputer</h3>
+                    <p>Akses ke laboratorium komputer dengan spesifikasi tinggi untuk praktik langsung.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> PC Core i7 & SSD</li>
+                        <li><i class="fas fa-check"></i> Software original</li>
+                        <li><i class="fas fa-check"></i> Internet cepat</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Konsultasi</h3>
+                    <p>Sesi konsultasi privat dengan instruktur berpengalaman untuk membantu kesulitan belajar.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Jadwal fleksibel</li>
+                        <li><i class="fas fa-check"></i> Online/Offline</li>
+                        <li><i class="fas fa-check"></i> Unlimited session</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Sertifikasi</h3>
+                    <p>Sertifikat resmi yang diakui industri untuk meningkatkan nilai kompetensi Anda.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Sertifikat kelulusan</li>
+                        <li><i class="fas fa-check"></i> Sertifikat kompetensi</li>
+                        <li><i class="fas fa-check"></i> Rekomendasi kerja</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Penempatan Kerja</h3>
+                    <p>Bantuan penempatan kerja di perusahaan mitra kami setelah menyelesaikan kelas.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Job matching</li>
+                        <li><i class="fas fa-check"></i> Training interview</li>
+                        <li><i class="fas fa-check"></i> CV building</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Komunitas</h3>
+                    <p>Bergabung dengan komunitas alumni untuk networking dan sharing pengetahuan.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Forum diskusi</li>
+                        <li><i class="fas fa-check"></i> Meetup rutin</li>
+                        <li><i class="fas fa-check"></i> Job sharing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section" id="stats">
+        <div class="container">
+            <h2 class="section-title">Pencapaian Kami</h2>
+            <p class="section-subtitle">Bukti nyata kualitas pendidikan yang kami berikan kepada siswa.</p>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>90% Kelulusan</h3>
+                    <p>Rata-rata siswa berhasil menyelesaikan kelas dengan nilai memuaskan</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>85% Penempatan Kerja</h3>
+                    <p>Lulusan kami berhasil mendapatkan pekerjaan dalam 3 bulan setelah lulus</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Penghargaan Pendidikan</h3>
+                    <p>Meraih penghargaan sebagai lembaga kursus komputer terbaik 3 tahun berturut-turut</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>50+ Partner Perusahaan</h3>
+                    <p>Bekerja sama dengan perusahaan ternama untuk penempatan kerja siswa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section section-light" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery Kegiatan</h2>
+            <p class="section-subtitle">Lihat momen-momen seru selama proses belajar mengajar di tempat kami.</p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" tabindex="0" role="button" aria-label="Buka gambar Sesi Belajar Kelas">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kelas Belajar">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Sesi Belajar Kelas</h3>
+                        <p>Instruktur membimbing siswa secara langsung dalam sesi pembelajaran praktik.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" tabindex="0" role="button" aria-label="Buka gambar Workshop">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Workshop">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Workshop Khusus</h3>
+                        <p>Workshop dengan pembicara dari industri untuk pengalaman belajar yang lebih baik.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" tabindex="0" role="button" aria-label="Buka gambar Presentasi Proyek Akhir">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Proyek Akhir">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Presentasi Proyek Akhir</h3>
+                        <p>Siswa mempresentasikan proyek akhir mereka di hadapan instruktur dan teman sekelas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" aria-hidden="true">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Tutup lightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-image-container">
+                <img id="lightboxImage" src="" alt="">
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-laptop-code"></i>
+                    <div>
+                        <h3>Tik Tak Top Course</h3>
+                        <p>Belajar Komputer Terbaik</p>
+                    </div>
+                </div>
+                <p>Kami berkomitmen memberikan pendidikan komputer terbaik dengan metode pembelajaran modern dan instruktur berpengalaman.</p>
+                
+                <div class="social-icons">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Link</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-chevron-right"></i><a href="#home">Beranda</a></li>
+                    <li><i class="fas fa-chevron-right"></i><a href="#about">Tentang Kami</a></li>
+                    <li><i class="fas fa-chevron-right"></i><a href="#kelas">Kelas</a></li>
+                    <li><i class="fas fa-chevron-right"></i><a href="#gallery">Gallery</a></li>
+                    <li><i class="fas fa-chevron-right"></i><a href="#register">Pendaftaran Anggota</a></li>
+                    <li><i class="fas fa-chevron-right"></i><a href="#layanan">Informasi Layanan</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak Kami</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i>Jl. Pendidikan No. 123, Jakarta</li>
+                    <li><i class="fas fa-phone"></i>(021) 1234-5678</li>
+                    <li><i class="fas fa-envelope"></i>info@tiktaktopcourse.com</li>
+                    <li><i class="fab fa-whatsapp"></i>+62 812-3456-7890</li>
+                    <li><i class="fas fa-clock"></i>Senin - Jumat: 08:00 - 17:00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tik Tak Top Course. Semua Hak Dilindungi. | Dibuat dengan <i class="fas fa-heart"></i> untuk pendidikan Indonesia</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
